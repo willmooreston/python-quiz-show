@@ -15,6 +15,7 @@ export const questions = [
     options: ["this", "self", "cls", "obj"],
     answer: "self",
     explanation: "self refers to the instance the method is called on. It's a convention, not a keyword — but don't fight it.",
+    link: "https://docs.python.org/3/tutorial/classes.html#method-objects",
   },
   {
     id: "mc2",
@@ -24,6 +25,7 @@ export const questions = [
     options: ["__new__", "__create__", "__init__", "__start__"],
     answer: "__init__",
     explanation: "__init__ initializes the instance after it's created. It's the constructor you'll use 99% of the time.",
+    link: "https://docs.python.org/3/reference/datamodel.html#object.__init__",
   },
   {
     id: "mc3",
@@ -38,6 +40,7 @@ export const questions = [
     ],
     answer: "Class attributes are shared across all instances; instance attributes belong to one instance",
     explanation: "A class attribute lives on the class itself and is shared. An instance attribute is set on self and is unique to that object.",
+    link: "https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables",
   },
   {
     id: "mc4",
@@ -47,6 +50,7 @@ export const questions = [
     options: ["A mixin", "The base (parent) class", "An interface", "A metaclass"],
     answer: "The base (parent) class",
     explanation: "The class in parentheses is the parent. Dog inherits all of Animal's methods and attributes.",
+    link: "https://docs.python.org/3/tutorial/classes.html#inheritance",
   },
   {
     id: "mc5",
@@ -61,6 +65,7 @@ export const questions = [
     ],
     answer: "A proxy object that delegates method calls to the parent class",
     explanation: "super() gives you a proxy that follows the MRO to find the next class in line — usually the parent.",
+    link: "https://docs.python.org/3/library/functions.html#super",
   },
   {
     id: "mc6",
@@ -70,6 +75,7 @@ export const questions = [
     options: ["A", "B", "AB", "Error"],
     answer: "B",
     explanation: "B overrides greet(). Python looks up methods on the instance's class first, so B's version wins.",
+    link: "https://docs.python.org/3/tutorial/classes.html#inheritance",
   },
   {
     id: "mc7",
@@ -79,6 +85,7 @@ export const questions = [
     options: ["__repr__", "__str__", "__print__", "__format__"],
     answer: "__str__",
     explanation: "__str__ is for human-readable output and is what print() uses. __repr__ is for developer/debugging output.",
+    link: "https://docs.python.org/3/reference/datamodel.html#object.__str__",
   },
   {
     id: "mc8",
@@ -88,6 +95,7 @@ export const questions = [
     options: ["False", "True", "None", "TypeError"],
     answer: "True",
     explanation: "isinstance() checks the full inheritance chain. A subclass instance IS an instance of the parent class.",
+    link: "https://docs.python.org/3/library/functions.html#isinstance",
   },
   {
     id: "mc9",
@@ -97,6 +105,7 @@ export const questions = [
     options: ["@staticmethod", "@classmethod", "@property", "@abstractmethod"],
     answer: "@classmethod",
     explanation: "@classmethod passes cls (the class) as the first argument instead of self (the instance). Useful for alternative constructors.",
+    link: "https://docs.python.org/3/library/functions.html#classmethod",
   },
   {
     id: "mc10",
@@ -111,6 +120,7 @@ export const questions = [
     ],
     answer: "Method Resolution Order — the order Python searches classes for a method",
     explanation: "The MRO (C3 linearization) defines the order Python searches classes when looking up a method. Use ClassName.__mro__ to inspect it.",
+    link: "https://docs.python.org/3/howto/mro.html",
   },
   {
     id: "mc11",
@@ -120,6 +130,7 @@ export const questions = [
     options: ["__size__", "__count__", "__len__", "__length__"],
     answer: "__len__",
     explanation: "Implementing __len__ makes your object work with the built-in len() function.",
+    link: "https://docs.python.org/3/reference/datamodel.html#object.__len__",
   },
   {
     id: "mc12",
@@ -134,6 +145,7 @@ export const questions = [
     ],
     answer: "staticmethod receives neither self nor cls — it's just a regular function namespaced to the class",
     explanation: "A static method is a plain function that lives inside a class for organizational reasons. No access to instance or class state.",
+    link: "https://docs.python.org/3/library/functions.html#staticmethod",
   },
   {
     id: "mc13",
@@ -148,6 +160,7 @@ export const questions = [
     ],
     answer: "The parent's __init__ is skipped — parent setup code won't run",
     explanation: "You must explicitly call super().__init__() if you want the parent to initialize. Python won't call it for you.",
+    link: "https://docs.python.org/3/library/functions.html#super",
   },
   {
     id: "mc14",
@@ -157,6 +170,7 @@ export const questions = [
     options: ["__plus__", "__combine__", "__add__", "__sum__"],
     answer: "__add__",
     explanation: "Dunder methods map to operators. __add__ → +, __sub__ → -, __mul__ → *, etc.",
+    link: "https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types",
   },
   {
     id: "mc15",
@@ -171,6 +185,7 @@ export const questions = [
     ],
     answer: "The object's __dict__ — its instance attributes as a dictionary",
     explanation: "vars(obj) is equivalent to obj.__dict__. It shows only instance attributes, not methods or class attributes.",
+    link: "https://docs.python.org/3/library/functions.html#vars",
   },
 
   // --- FILL IN THE BLANK ---
@@ -182,6 +197,7 @@ export const questions = [
     answer: ["Car"],
     displayAnswer: "class Car(object):",
     explanation: "Class names use PascalCase by convention. Inheriting from object is implicit in Python 3 but some write it explicitly.",
+    link: "https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes",
   },
   {
     id: "fb2",
@@ -191,6 +207,7 @@ export const questions = [
     answer: ["self"],
     displayAnswer: "self.name = name",
     explanation: "self refers to the instance being created. Assigning to self.x creates an instance attribute.",
+    link: "https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables",
   },
   {
     id: "fb3",
@@ -200,6 +217,7 @@ export const questions = [
     answer: ["super().__init__"],
     displayAnswer: "super().__init__(name)",
     explanation: "super().__init__() delegates to the parent's constructor. Always call it when the parent has setup logic.",
+    link: "https://docs.python.org/3/library/functions.html#super",
   },
   {
     id: "fb4",
@@ -209,6 +227,7 @@ export const questions = [
     answer: ["__str__"],
     displayAnswer: "__str__",
     explanation: "__str__ is called by print() and str(). Return a human-friendly string.",
+    link: "https://docs.python.org/3/reference/datamodel.html#object.__str__",
   },
   {
     id: "fb5",
@@ -218,6 +237,7 @@ export const questions = [
     answer: ["isinstance"],
     displayAnswer: "isinstance(obj, Vehicle)",
     explanation: "isinstance() is the idiomatic way to check type, and it respects inheritance.",
+    link: "https://docs.python.org/3/library/functions.html#isinstance",
   },
   {
     id: "fb6",
@@ -227,6 +247,7 @@ export const questions = [
     answer: ["classmethod"],
     displayAnswer: "@classmethod",
     explanation: "@classmethod is commonly used for alternative constructors that create instances from different input formats.",
+    link: "https://docs.python.org/3/library/functions.html#classmethod",
   },
   {
     id: "fb7",
@@ -236,6 +257,7 @@ export const questions = [
     answer: ["issubclass"],
     displayAnswer: "issubclass(Dog, Animal)",
     explanation: "issubclass() checks the class hierarchy. Unlike isinstance(), both arguments are classes (not instances).",
+    link: "https://docs.python.org/3/library/functions.html#issubclass",
   },
   {
     id: "fb8",
@@ -245,6 +267,7 @@ export const questions = [
     answer: ["count", "counter"],
     displayAnswer: "count = 0",
     explanation: "A variable defined directly in the class body (not inside a method) is a class attribute, shared by all instances.",
+    link: "https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables",
   },
   {
     id: "fb9",
@@ -254,6 +277,7 @@ export const questions = [
     answer: ["__len__"],
     displayAnswer: "__len__",
     explanation: "Implementing __len__ plugs your class into Python's built-in len() function.",
+    link: "https://docs.python.org/3/reference/datamodel.html#object.__len__",
   },
   {
     id: "fb10",
@@ -263,5 +287,6 @@ export const questions = [
     answer: ["vars"],
     displayAnswer: "vars(obj)",
     explanation: "vars(obj) returns obj.__dict__ — a dict of the instance's own attributes.",
+    link: "https://docs.python.org/3/library/functions.html#vars",
   },
 ];

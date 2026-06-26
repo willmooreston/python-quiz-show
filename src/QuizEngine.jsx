@@ -106,6 +106,14 @@ function MCQuestion({ q, onAnswer }) {
             {isCorrect ? "✓ Correct" : `✗ Answer: ${q.answer}`}
           </div>
           <div style={{ color: "#94a3b8", fontSize: "13px", fontFamily: "monospace", lineHeight: 1.5 }}>{q.explanation}</div>
+          {q.link && (
+            <a href={q.link} target="_blank" rel="noreferrer" style={{
+              display: "inline-block", marginTop: "8px", color: "#38bdf8",
+              fontFamily: "monospace", fontSize: "12px", opacity: 0.8,
+            }}>
+              Would you like to know more? →
+            </a>
+          )}
         </div>
       )}
       {revealed && (
@@ -175,6 +183,14 @@ function FITBQuestion({ q, onAnswer }) {
             {isCorrect ? "✓ Correct" : `✗ Answer: ${q.displayAnswer}`}
           </div>
           <div style={{ color: "#94a3b8", fontSize: "13px", fontFamily: "monospace", lineHeight: 1.5 }}>{q.explanation}</div>
+          {q.link && (
+            <a href={q.link} target="_blank" rel="noreferrer" style={{
+              display: "inline-block", marginTop: "8px", color: "#38bdf8",
+              fontFamily: "monospace", fontSize: "12px", opacity: 0.8,
+            }}>
+              Would you like to know more? →
+            </a>
+          )}
         </div>
       )}
       {revealed && (
@@ -213,9 +229,18 @@ function Results({ score, total, missed, onRetry, onMissed, onMenu }) {
             MISSED ({missed.length})
           </div>
           {missed.map(q => (
-            <div key={q.id} style={{ color: "#64748b", fontFamily: "monospace", fontSize: "13px", marginBottom: "6px", lineHeight: 1.4 }}>
-              <span style={{ color: TOPIC_COLORS[q.topic] || "#94a3b8" }}>[{q.topic}]</span>{" "}
-              {q.question.split("\n")[0].slice(0, 60)}{q.question.length > 60 ? "…" : ""}
+            <div key={q.id} style={{ marginBottom: "10px", lineHeight: 1.4 }}>
+              <div style={{ color: "#64748b", fontFamily: "monospace", fontSize: "13px" }}>
+                <span style={{ color: TOPIC_COLORS[q.topic] || "#94a3b8" }}>[{q.topic}]</span>{" "}
+                {q.question.split("\n")[0].slice(0, 60)}{q.question.length > 60 ? "…" : ""}
+              </div>
+              {q.link && (
+                <a href={q.link} target="_blank" rel="noreferrer" style={{
+                  color: "#38bdf8", fontFamily: "monospace", fontSize: "11px", opacity: 0.7,
+                }}>
+                  Would you like to know more? →
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -251,7 +276,11 @@ function Results({ score, total, missed, onRetry, onMissed, onMenu }) {
 }
 
 export default function QuizEngine({ quiz, onBack }) {
-  const [deck, setDeck] = useState(() => shuffle(quiz.questions));
+  const buildDeck = () => {
+    const shuffled = shuffle(quiz.questions);
+    return quiz.meta.limit ? shuffled.slice(0, quiz.meta.limit) : shuffled;
+  };
+  const [deck, setDeck] = useState(buildDeck);
   const [idx, setIdx] = useState(0);
   const [score, setScore] = useState(0);
   const [missed, setMissed] = useState([]);
@@ -273,7 +302,7 @@ export default function QuizEngine({ quiz, onBack }) {
   };
 
   const retryAll = () => {
-    setDeck(shuffle(quiz.questions));
+    setDeck(buildDeck());
     setIdx(0); setScore(0); setMissed([]); setDone(false);
   };
 

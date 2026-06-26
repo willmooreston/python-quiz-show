@@ -15,6 +15,7 @@ export const questions = [
     options: ["6", "16", "10", "Error"],
     answer: "16",
     explanation: "sum() accepts an optional start value as the second argument. 1+2+3+10 = 16.",
+    link: "https://docs.python.org/3/library/functions.html#sum",
   },
   {
     id: "mc2",
@@ -24,6 +25,7 @@ export const questions = [
     options: ["[0, 1, 2, 3]", "[1, 2, 3, 4]", "[1, 2, 3]", "[2, 3, 4]"],
     answer: "[1, 2, 3]",
     explanation: "Slicing is start-inclusive, end-exclusive. Indices 1, 2, 3 → [1, 2, 3].",
+    link: "https://docs.python.org/3/library/stdtypes.html#common-sequence-operations",
   },
   {
     id: "mc3",
@@ -38,6 +40,7 @@ export const questions = [
     ],
     answer: "Reverses the list",
     explanation: "Step of -1 walks the list backwards from end to start — a classic reversal trick.",
+    link: "https://docs.python.org/3/library/stdtypes.html#common-sequence-operations",
   },
   {
     id: "mc4",
@@ -47,6 +50,7 @@ export const questions = [
     options: ["[10, 30, 50]", "[20, 40]", "[10, 20]", "[50, 30, 10]"],
     answer: "[10, 30, 50]",
     explanation: "Step of 2 picks every other element starting from index 0: 10, 30, 50.",
+    link: "https://docs.python.org/3/library/stdtypes.html#common-sequence-operations",
   },
   {
     id: "mc5",
@@ -61,6 +65,7 @@ export const questions = [
     ],
     answer: "lst.index(max(lst))",
     explanation: "Python has no built-in argmax. Combine max() to get the value, then .index() to find its position.",
+    link: "https://docs.python.org/3/library/functions.html#max",
   },
   {
     id: "mc6",
@@ -75,6 +80,7 @@ export const questions = [
     ],
     answer: "['hello', 'world']",
     explanation: "split() with no argument splits on any whitespace and strips leading/trailing whitespace.",
+    link: "https://docs.python.org/3/library/stdtypes.html#str.split",
   },
   {
     id: "mc7",
@@ -84,6 +90,7 @@ export const questions = [
     options: ["None", "KeyError", "'default'", "False"],
     answer: "'default'",
     explanation: ".get() returns the second argument as a fallback instead of raising KeyError.",
+    link: "https://docs.python.org/3/library/stdtypes.html#dict.get",
   },
   {
     id: "mc8",
@@ -93,6 +100,7 @@ export const questions = [
     options: ["[1, 2, 3]", "[3, 2, 1]", "[3, 1, 2]", "None"],
     answer: "[3, 2, 1]",
     explanation: "sorted() returns a new sorted list. reverse=True gives descending order.",
+    link: "https://docs.python.org/3/library/functions.html#sorted",
   },
   {
     id: "mc9",
@@ -102,6 +110,7 @@ export const questions = [
     options: ["[1, 4, 9, 16]", "[0, 1, 4, 9]", "[0, 1, 2, 3]", "[1, 2, 3, 4]"],
     answer: "[0, 1, 4, 9]",
     explanation: "range(4) is 0–3. Squaring each: 0, 1, 4, 9.",
+    link: "https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions",
   },
   {
     id: "mc10",
@@ -111,6 +120,7 @@ export const questions = [
     options: ["'a'", "(0, 'a')", "(1, 'a')", "0"],
     answer: "(0, 'a')",
     explanation: "enumerate() yields (index, value) tuples. Default start index is 0.",
+    link: "https://docs.python.org/3/library/functions.html#enumerate",
   },
   {
     id: "mc11",
@@ -125,6 +135,7 @@ export const questions = [
     ],
     answer: "Pairing elements by position into tuples",
     explanation: "zip() pairs elements at the same index: (1,'a'), (2,'b'), (3,'c').",
+    link: "https://docs.python.org/3/library/functions.html#zip",
   },
   {
     id: "mc12",
@@ -134,6 +145,7 @@ export const questions = [
     options: ["['a', 'b', 'c']", "'a, b, c'", "'a b c'", "Error"],
     answer: "'a, b, c'",
     explanation: "join() concatenates list elements with the string as a separator.",
+    link: "https://docs.python.org/3/library/stdtypes.html#str.join",
   },
   {
     id: "mc13",
@@ -143,6 +155,7 @@ export const questions = [
     options: ["lst[:-3]", "lst[-3]", "lst[-3:]", "lst[len(lst)-3]"],
     answer: "lst[-3:]",
     explanation: "Negative indices count from the end. -3: means 'from 3rd-to-last through end'.",
+    link: "https://docs.python.org/3/library/stdtypes.html#common-sequence-operations",
   },
   {
     id: "mc14",
@@ -157,6 +170,7 @@ export const questions = [
     ],
     answer: "dict(zip(keys, values))",
     explanation: "zip pairs them up, dict() converts the resulting tuples into key-value pairs.",
+    link: "https://docs.python.org/3/library/stdtypes.html#dict",
   },
   {
     id: "mc15",
@@ -166,6 +180,7 @@ export const questions = [
     options: ["False", "True", "[False, False, True]", "1"],
     answer: "True",
     explanation: "any() returns True if at least one element is truthy.",
+    link: "https://docs.python.org/3/library/functions.html#any",
   },
 
   // --- FILL IN THE BLANK ---
@@ -177,6 +192,7 @@ export const questions = [
     answer: ["::", ":"],
     displayAnswer: "lst[:]  or  lst[::]",
     explanation: "An empty slice [:] copies the full list. [::] works too but [:] is idiomatic.",
+    link: "https://docs.python.org/3/library/stdtypes.html#common-sequence-operations",
   },
   {
     id: "fb2",
@@ -186,6 +202,7 @@ export const questions = [
     answer: ["sum"],
     displayAnswer: "sum(numbers)",
     explanation: "sum() works on any iterable of numbers.",
+    link: "https://docs.python.org/3/library/functions.html#sum",
   },
   {
     id: "fb3",
@@ -195,6 +212,7 @@ export const questions = [
     answer: ["split"],
     displayAnswer: "s.split(',')",
     explanation: ".split(sep) splits on the given separator.",
+    link: "https://docs.python.org/3/library/stdtypes.html#str.split",
   },
   {
     id: "fb4",
@@ -204,6 +222,7 @@ export const questions = [
     answer: ["=="],
     displayAnswer: "== 0",
     explanation: "The if clause filters elements. x % 2 == 0 is the even check.",
+    link: "https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions",
   },
   {
     id: "fb5",
@@ -213,6 +232,7 @@ export const questions = [
     answer: ["get"],
     displayAnswer: ".get('key', None)",
     explanation: ".get() avoids KeyError and returns the fallback if the key is missing.",
+    link: "https://docs.python.org/3/library/stdtypes.html#dict.get",
   },
   {
     id: "fb6",
@@ -222,6 +242,7 @@ export const questions = [
     answer: ["enumerate"],
     displayAnswer: "enumerate(my_list)",
     explanation: "enumerate() yields (index, value) pairs — avoids manual counter variables.",
+    link: "https://docs.python.org/3/library/functions.html#enumerate",
   },
   {
     id: "fb7",
@@ -231,6 +252,7 @@ export const questions = [
     answer: ["::-1"],
     displayAnswer: "s[::-1]",
     explanation: "Step -1 with no start/end reverses any sequence. Works on strings and lists.",
+    link: "https://docs.python.org/3/library/stdtypes.html#common-sequence-operations",
   },
   {
     id: "fb8",
@@ -240,6 +262,7 @@ export const questions = [
     answer: ["join"],
     displayAnswer: "' '.join(words)",
     explanation: ".join() is called on the separator string, not the list — easy to forget.",
+    link: "https://docs.python.org/3/library/stdtypes.html#str.join",
   },
   {
     id: "fb9",
@@ -249,6 +272,7 @@ export const questions = [
     answer: ["lambda"],
     displayAnswer: "key=lambda x: x[1]",
     explanation: "lambda defines an inline function. key= tells sorted() what to sort by.",
+    link: "https://docs.python.org/3/reference/expressions.html#lambda",
   },
   {
     id: "fb10",
@@ -258,5 +282,6 @@ export const questions = [
     answer: ["all"],
     displayAnswer: "all(x > 0 for x in nums)",
     explanation: "all() with a generator expression is clean and Pythonic — no intermediate list needed.",
+    link: "https://docs.python.org/3/library/functions.html#all",
   },
 ];
