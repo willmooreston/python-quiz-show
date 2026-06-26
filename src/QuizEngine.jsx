@@ -72,7 +72,7 @@ function MCQuestion({ q, onAnswer }) {
         <TopicBadge topic={q.topic} />
         <span style={{ color: "#475569", fontSize: "11px", fontFamily: "monospace", marginLeft: "8px" }}>MULTIPLE CHOICE</span>
       </div>
-      <p style={{ color: "#e2e8f0", fontSize: "16px", lineHeight: 1.6, marginBottom: "20px", fontFamily: "monospace", whiteSpace: "pre-wrap" }}>
+      <p style={{ color: "#e2e8f0", fontSize: "16px", lineHeight: 1.6, marginBottom: "20px", fontFamily: "monospace", whiteSpace: "pre-wrap", textAlign: "left" }}>
         {q.question}
       </p>
       <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "20px" }}>
@@ -140,7 +140,7 @@ function FITBQuestion({ q, onAnswer }) {
         <TopicBadge topic={q.topic} />
         <span style={{ color: "#475569", fontSize: "11px", fontFamily: "monospace", marginLeft: "8px" }}>FILL IN THE BLANK</span>
       </div>
-      <p style={{ color: "#e2e8f0", fontSize: "16px", lineHeight: 1.6, marginBottom: "20px", fontFamily: "monospace", whiteSpace: "pre-wrap" }}>
+      <p style={{ color: "#e2e8f0", fontSize: "16px", lineHeight: 1.6, marginBottom: "20px", fontFamily: "monospace", whiteSpace: "pre-wrap", textAlign: "left" }}>
         {q.question}
       </p>
       <input
